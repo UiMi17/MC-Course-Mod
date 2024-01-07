@@ -1,0 +1,23 @@
+{
+  "item.mccourse.alexandrite": "Alexandrite",
+  "item.mccourse.raw_alexandrite": "Raw Alexandrite",
+
+  "block.mccourse.alexandrite_block": "Block of Alexandrite",
+  "block.mccourse.raw_alexandrite_block": "Block of Raw Alexandrite",
+  "block.mccourse.sound_block": "Sound Block",
+
+  "block.mccourse.nether_alexandrite_ore": "Nether Alexandrite Ore",
+  "block.mccourse.end_stone_alexandrite_ore": "End Stone Alexandrite Ore",
+  "block.mccourse.deepslate_alexandrite_ore": "Deepslate Alexandrite Ore",
+  "block.mccourse.alexandrite_ore": "Alexandrite Ore",
+
+  "creativetab.course_tab_items": "Course Tab Items",
+  "creativetab.course_tab_blocks": "Course Tab Blocks",
+  "creativetab.course_tab_ores": "Course Tab Ores",
+  "creativetab.course_tab_food": "Course Tab Food",
+
+  "item.mccourse.metal_detector": "Metal Detector",
+  "item.mccourse.metal_detector.no_valuables": "No valuables found",
+
+  "item.mccourse.kohlrabi": "Kohlrabi"
+}

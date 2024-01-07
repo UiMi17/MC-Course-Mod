@@ -2,6 +2,7 @@ package net.uimi.mccourse;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -12,6 +13,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.uimi.mccourse.block.ModBlocks;
+import net.uimi.mccourse.item.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -25,21 +28,46 @@ public class MCCourseMod {
     public MCCourseMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
+//        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+//    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+//        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) { //Example of vanilla creative mod tabs setup
+//        if (event.getTabKey() == ModCreativeModTabs.COURSE_TAB_ITEMS.getKey()) {
+//            event.accept(ModItems.ALEXANDRITE);
+//            event.accept(ModItems.RAW_ALEXANDRITE);
+//            event.accept(ModItems.METAL_DETECTOR);
+//        }
+//        }
+//        if (event.getTabKey() == ModCreativeModTabs.COURSE_TAB_BLOCKS.getKey()) {
+//            event.accept(ModBlocks.ALEXANDRITE_BLOCK);
+//            event.accept(ModBlocks.RAW_ALEXANDRITE_BLOCK);
+//            event.accept(ModBlocks.SOUND_BLOCK);
+//        }
+//        if (event.getTabKey() == ModCreativeModTabs.COURSE_TAB_ORES.getKey()) {
+//            event.accept(ModBlocks.NETHER_ALEXANDRITE_ORE);
+//            event.accept(ModBlocks.END_STONE_ALEXANDRITE_ORE);
+//            event.accept(ModBlocks.DEEPSLATE_ALEXANDRITE_ORE);
+//            event.accept(ModBlocks.ALEXANDRITE_ORE);
+//        }
+//        if (event.getTabKey() == ModCreativeModTabs.COURSE_TAB_FOOD.getKey()) {
+//            event.accept(ModItems.KOHLRABI);
+//        }
 
-    }
+//    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
