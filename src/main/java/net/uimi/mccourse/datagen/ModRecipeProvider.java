@@ -1,6 +1,7 @@
 package net.uimi.mccourse.datagen;
 
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
@@ -38,6 +39,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_alexandrite", inventoryTrigger(ItemPredicate.Builder.item()
                         .of(ModItems.ALEXANDRITE.get()).build()))
                 .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALEXANDRITE_STAIRS.get(), 2)
+                .pattern("A  ")
+                .pattern("AA ")
+                .pattern("AAA")
+                .define('A', ModBlocks.ALEXANDRITE_BLOCK.get())
+                .unlockedBy("has_alexandrite", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModBlocks.ALEXANDRITE_BLOCK.get()).withCount(MinMaxBounds.Ints.exactly(6)).build()))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALEXANDRITE_SLAB.get(), 3)
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("AAA")
+                .define('A', ModBlocks.ALEXANDRITE_BLOCK.get())
+                .unlockedBy("has_alexandrite", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(ModBlocks.ALEXANDRITE_BLOCK.get()).withCount(MinMaxBounds.Ints.exactly(3)).build()))
+                .save(consumer);
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
                 9).requires(ModBlocks.ALEXANDRITE_BLOCK.get())
