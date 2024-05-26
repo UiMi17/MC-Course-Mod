@@ -31,6 +31,8 @@ public class ModCreativeModTabs {
                 output.accept(ModBlocks.SOUND_BLOCK.get());
                 output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
                 output.accept(ModBlocks.ALEXANDRITE_SLAB.get());
+                output.accept(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
             }).build());
     public static final RegistryObject<CreativeModeTab> COURSE_TAB_ORES = CREATIVE_MOD_TABS.register("course_tab_ores",
             () -> CreativeModeTab.builder().withTabsAfter(ModCreativeModTabs.COURSE_TAB_FOOD.getKey()).icon(
